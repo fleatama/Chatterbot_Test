@@ -1,0 +1,8 @@
+https://hitori-sekai.com/python/error-pyenv/
+
+この記事が優秀だった。
+Pythonのバージョン切り替えやChatterbotのインストールが出来ない問題を解決してくれた。
+要はZshに対してシェルに対するパスが通っていませんでした。
+
+
+2022/4/20 PM 15:55:12

@@ -1,0 +1,21 @@
+https://harucharuru.hatenablog.com/entry/2020/11/16/205232
+
+chatterbotを入れようとする
+→出来ない
+pipのバージョンが違う?とか言われる
+そもそも使っているPythonが2.7とかで世間ではPython3が主流でなおかつ
+Python2系はサポートが切られるレベルらしい
+Python2から切り替えたいけど、別のバージョンに切り替えようとすると
+そのバージョンのPython入ってないよと言われる
+インストールしようとするとエラーが出た。
+で、うまく行かなくて検索した記事がこれ。
+2022/4/20 PM 15:20:02
+
+その対策のコマンドがこれらしい
+3.6.5のところを任意でインストールしたバージョンに変えるといいらしい
+
+CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" \
+pyenv install --patch 3.6.5 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
+
+CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" \
+pyenv install --patch 3.8.0 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
